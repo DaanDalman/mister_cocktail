@@ -1,2 +1,19 @@
-<h1>Cocktails</h1>
-<p>Find me in app/views/cocktails/name.html.erb</p>
+<div class='index_title' justify_content='center'>
+  <h1>Cocktails</h1>
+  <%= link_to "Create", new_cocktail_path, class:"btn btn-primary" %>
+</div>
+<ul class="index_card">
+  <li>
+    <% @cocktails.each do |cocktail| %>
+    <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+    <h5 class="card-title"><%= cocktail.name %></h5>
+    <p class="card-text"></p>
+    <%= link_to "See cocktail", cocktail_path(cocktail), class: "btn btn-primary"  %>
+    </div>
+  </li>
+</div>
+
+  <% end %>
+</ul>

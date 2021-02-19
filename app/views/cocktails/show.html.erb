@@ -1,0 +1,11 @@
+<h1><%= @cocktail.name %></h1>
+  <% @cocktail.ingredients do |ingredient| %>
+   <span><%= ingredient.name %></span>
+  
+  <% end %>
+  
+
+
+ <%= link_to "Back home", cocktails_path, class:"btn btn-success" %>
+
+    
