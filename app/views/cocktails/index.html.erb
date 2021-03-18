@@ -2,25 +2,17 @@
   <h1>Cocktails</h1>
   <%= link_to "Create", new_cocktail_path, class:"btn btn-primary" %>
 </div>
-<ul class="index_card">
-  <li>
-    <% @cocktails.each do |cocktail| %>
-    <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <%# <div class="card-body" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>')"> %>
-  
-    <h5 class="card-title"><%= cocktail.name %></h5>
-    
-    <%= link_to "See cocktail", cocktail_path(cocktail), class: "btn btn-primary"  %>
+<ul class="index_card d-flex justify-content-between m-2">
+  <% @cocktails.each do |cocktail| %>
+    <li>
+    <div class="card" style="">
+      <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+      <h5 class="card-title text-align-center"><%= cocktail.name %></h5>
+      <%= link_to "See cocktail", cocktail_path(cocktail), class: "btn btn-primary"  %>
     </div>
-  </li>
+    </li>
+  <% end %>
 </div>
 
-  <% end %>
+  
 </ul>
-
-<%= cl_image_tag("vjkagf3p038egp59kr7m",
-      width: 400, height: 300, crop: :thumb, gravity: :face) %>
-
-      <%= cl_image_tag("ojxnoeii3s8okhreggwi",
-      width: 400, height: 300, crop: :fill) %>
