@@ -1,3 +1,11 @@
-<%= render "form", cocktail: @cocktail %>
+<%# <%= render "form", cocktail: @cocktail %> 
 
- <%= link_to 'Back', cocktails_path %>
+<div class="container-create-form" style="justify-content-center">
+    <%= simple_form_for @cocktail do |f| %>
+        <%= f.input :name %>
+        <%= f.input :doses, collection: Dose::TIMES, label: false %>
+        <%= f.input :ingredients %>
+        <%= f.submit "Make new Cocktail", class: "btn btn-primary" %>
+    <% end %>
+</div>
+<%= link_to 'Back', cocktails_path %>
