@@ -1,4 +1,4 @@
-<div class="container">
+
   <div class="banner">
     <div class='index_title'>
       <h1>Cocktails</h1>
@@ -6,13 +6,12 @@
     </div>
   </div>
 
-  <ul class="index_card d-flex justify-content-between m-2">
+  <ul class="index-card">
     <% @cocktails.each do |cocktail| %>
-      <div class="card" style="">
-        <div class="card-cocktail-img" style="border-radius: 12px"><%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %></div>
+      <div class="card" style="m-2">
+        <div class="card-cocktail-img" style=""><%= cl_image_tag (cocktail.photo.key), height: 300, width: 280, crop: :fill %></div>
         <h5 class="card-title" style="text-align: center; color: #E67E22"><%= cocktail.name %></h5>
         <div class="card-cocktail-name" style="text-align: center; padding-bottom: 5px"><%= link_to "See cocktail", cocktail_path(cocktail), class: "btn btn-warning"%></div>
       </div>
     <% end %>
   </ul>
-</div>

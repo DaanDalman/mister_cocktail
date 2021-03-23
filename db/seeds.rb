@@ -9,6 +9,7 @@ require 'open-uri'
 
 puts "Cleaning database.."
 Ingredient.destroy_all
+Dose.destroy_all
 Cocktail.destroy_all
 
 puts "Creating ingredients.."
@@ -21,21 +22,34 @@ puts "Creating cocktails.."
 
 cocktail_1_picture = URI.open ('https://images.unsplash.com/photo-1598994392980-53a7fb033bcc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80')
 cocktail_1 = Cocktail.new({
-    name: "Malibu Sunrise"
+    name: "Malibu Sunrise",
+    amount: "2"
 })
 cocktail_1.photo.attach(io: cocktail_1_picture, filename: 'cocktail_1.png', content_type: 'image/png')
 cocktail_1.save!
 
 cocktail_2_picture = URI.open ('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
 cocktail_2 = Cocktail.new({
-    name: "Rum and Coke"
+    name: "Rum and Coke",
+    amount: "4"
 })
 cocktail_2.photo.attach(io: cocktail_2_picture, filename: 'cocktail_2.png', content_type: 'image/png')
 cocktail_2.save!
 
 cocktail_3_picture = URI.open ('https://images.unsplash.com/photo-1607446045875-de57c995726b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
 cocktail_3 = Cocktail.new({
-    name: "Green lagoon"
+    name: "Green lagoon",
+    amount: "1"
 })
 cocktail_3.photo.attach(io: cocktail_3_picture, filename: 'cocktail_3.png', content_type: 'image/png')
 cocktail_3.save!
+
+puts "Creating doses.."
+
+Dose.create(description: "Wodka")
+Dose.create(description: "Gin")
+Dose.create(description: "Black rum")
+Dose.create(description: "White rum")
+Dose.create(description: "Whiskey")
+Dose.create(description: "Tequila")
+Dose.create(description: "Absinth")

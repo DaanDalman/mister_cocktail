@@ -18,6 +18,23 @@
     // background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.8;
-    
+    opacity: 0.8; 
+}
+
+.index-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 15px;
+    margin-top: 6px;
+    justify-content: center;
+}
+
+.card {
+    width: 300px;
+}
+
+.card-cocktail-img {
+    border-radius: 12px;
+    margin: auto;
+    margin-top: 5px;
 }
