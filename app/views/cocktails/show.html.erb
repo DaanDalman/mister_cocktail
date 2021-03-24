@@ -1,11 +1,13 @@
-<div class="container-show-container d-flex">
-  <h1><%= @cocktail.name %></h1>
-    <% @cocktail.ingredients do |ingredient| %>
-    <span><%= ingredient.name %></span>
-    <% end %>
-    
-    <div class="cocktail-img"><%= cl_image_tag @cocktail.photo.key, height: 600, width: 800, crop: :fill %>
-      <div><%= link_to "Back home", cocktails_path, class:"btn btn-success w-100" %></div>
-    </div>
+<div class="background-img">
+  <div class="container-show-container d-flex">
+    <span style="color: white"><h1><%= @cocktail.name %></h1></span>
+      <% @cocktail.ingredients do |ingredient| %>
+      <span><%= ingredient.name %></span>
+      <% end %>
+      
+      <div class="cocktail-img"><%= cl_image_tag @cocktail.photo.key, height: 600, width: 800, crop: :fill %>
+        <div><%= link_to "Back home", cocktails_path, class:"btn btn-success w-100 mt-2" %></div>
+        <div><%= link_to "Remove Cocktail", cocktail_path(@cocktail), class: "btn btn-outline-secondary w-100 btn-sm mt-2", method: :delete, data: { confirm: "Delete?" }%></div>
+      </div>
+  </div>
 </div>
-    
