@@ -23,7 +23,9 @@ puts "Creating cocktails.."
 cocktail_1_picture = URI.open ('https://images.unsplash.com/photo-1598994392980-53a7fb033bcc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80')
 cocktail_1 = Cocktail.new({
     name: "Malibu Sunrise",
-    amount: "2"
+    amount: "2",
+    # doses: "Tequila"
+    # ingredients: ["ice", "lemon"]
 })
 cocktail_1.photo.attach(io: cocktail_1_picture, filename: 'cocktail_1.png', content_type: 'image/png')
 cocktail_1.save!

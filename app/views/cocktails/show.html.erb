@@ -1,11 +1,11 @@
-<h1><%= @cocktail.name %></h1>
-  <% @cocktail.ingredients do |ingredient| %>
-   <span><%= ingredient.name %></span>
-
-  <% end %>
-  
-  <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-
- <%= link_to "Back home", cocktails_path, class:"btn btn-success" %>
-
+<div class="container-show-container d-flex">
+  <h1><%= @cocktail.name %></h1>
+    <% @cocktail.ingredients do |ingredient| %>
+    <span><%= ingredient.name %></span>
+    <% end %>
+    
+    <div class="cocktail-img"><%= cl_image_tag @cocktail.photo.key, height: 600, width: 800, crop: :fill %>
+      <div><%= link_to "Back home", cocktails_path, class:"btn btn-success w-100" %></div>
+    </div>
+</div>
     
