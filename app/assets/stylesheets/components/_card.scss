@@ -1,5 +1,5 @@
 .card {
-    background-color: #ececec;
+    background-color: black;
     border-radius: 12px;
     width: 300px;
     margin: 10px;
@@ -7,10 +7,14 @@
 
 .index_title {
     text-align: center;
-    color: #E67E22;
-    // font-weight: bold;
+    color: purple;
     font-size: 4.5rem !important;
     padding-top: 30px;
+}
+
+.index_title h1 {
+    font-family: 'Yellowtail', cursive;
+    font-size: 6.5rem;
 }
 
 .background-img {

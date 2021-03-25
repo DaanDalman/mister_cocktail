@@ -2,7 +2,7 @@
   <div class="container-show-container d-flex">
     
       
-    <div class="cocktail-img"><%= cl_image_tag @cocktail.photo.key, height: 600, width: 800, crop: :fill %>
+    <div class="cocktail-img"><%= cl_image_tag @cocktail.photo.key, height: 600, width: 600, radius:"max", format: "png", crop: :fill %>
       <span class="cocktail-card-name" style="color: white"><h1><%= @cocktail.name %></h1></span>
       <% @cocktail.ingredients do |ingredient| %>
         <span><%= ingredient.name %></span>
