@@ -4,9 +4,9 @@
       
     <div class="cocktail-img"><%= cl_image_tag @cocktail.photo.key, height: 600, width: 600, radius:"max", format: "png", crop: :fill %>
       <span class="cocktail-card-name" style="color: white"><h1><%= @cocktail.name %></h1></span>
-      <% @cocktail.ingredients do |ingredient| %>
-        <span><%= ingredient.name %></span>
-      <% end %>
+      <%# <% @cocktail.ingredients do |ingredient| %>
+        <%# <span><%= ingredient.name %></span> 
+      <%# <% end %> 
       <div><%= link_to "Back home", cocktails_path, class:"btn btn-success w-100 mt-2" %></div>
       <div><%= link_to "Delete Cocktail", cocktail_path(@cocktail), class: "btn btn-danger w-100 mt-2", method: :delete, data: { confirm: "Delete?" }%></div>
     </div>

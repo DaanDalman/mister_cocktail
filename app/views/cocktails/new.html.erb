@@ -4,7 +4,7 @@
     <%= simple_form_for @cocktail do |f| %>
         <%= f.input :name %>
         <%= f.input :doses, collection: Dose::DESCRIPTION, label: "Liqour" %>
-        <%= f.input :doses, collection: Dose::TIMES, label: "Number of doses" %>
+        <%= f.input :amount, collection: Dose::TIMES, label: "Number of doses" %>
         <%= f.input :ingredients, collection: Ingredient::NAMES, label: "Ingredient" %>
         <%= f.input :photo, as: :file, label: "Image of cocktail" %>
         <%= f.submit "Make new Cocktail", class: "btn btn-primary w-100 mt-2" %>
