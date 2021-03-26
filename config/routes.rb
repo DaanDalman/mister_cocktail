@@ -2,12 +2,12 @@ Rails.application.routes.draw do
   # get 'cocktails/name'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :cocktails, only: [:index, :show, :new, :create, :destroy] do
+    resources :doses, only: [:new, :create, :show]
+  end
+
+  resources :ingredients do
     resources :doses, only: [:new, :create]
   end
 
-#   resources :ingredients do
-#     resources :doses, only: [:new, :create]
-#   end
-
-#   resources :ingredients, only: :destroy
+  resources :ingredients, only: :destroy
 end
