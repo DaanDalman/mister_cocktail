@@ -1,9 +1,12 @@
 
 <div class="container-cards" style="width: 100%">
   <div class="banner">
-    <div class='index_title' style="display: grid">
-      <span style="font-size: 4.5rem"><h1>Cocktails</h1></span>
-      <span><%= link_to "Make a Faboulos Cocktail", new_cocktail_path, class:"btn btn-primary" %></span>
+    <div class='index_title d-flex' style="justify-content: center">
+      <div>
+        <span style="font-size: 4.5rem"><h1>Cocktails</h1></span>
+        <span><%= link_to "Make a Faboulos Cocktail", new_cocktail_path, class:"btn btn-primary" %></span>
+      </div>
+      <div class="banner-gif"><%= cl_image_tag "https://i.pinimg.com/originals/87/88/12/878812e91bb59437a1b027799bcfc05d.gif", height: 300, width: 280, radius: "max", format: "gif", crop: :fill  %></div>
     </div>
   </div>
 
@@ -17,3 +20,4 @@
     <% end %>
   </ul>
 </div>
+<div class="index-background"></div>
